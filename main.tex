@@ -1,0 +1,119 @@
+\documentclass[10pt, twocolumn, twoside, letterpaper]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage[activate={true, nocompatibility}, final, tracking=true, kerning=true, spacing=true, factor=1100, stretch=10, shrink=10]{microtype}
+\linespread{0.9}
+
+% \makeatletter
+% \def\mycopyrightnotice{
+%   {\footnotesize
+%   \begin{minipage}{\textwidth}
+%   \centering
+%   978-1-6654-2113-3/21/\$31.00 \copyright2021 IEEE
+%   \end{minipage}
+%   }
+% }
+% \def\ps@IEEEtitlepagestyle{
+%   \def\@oddfoot{\mycopyrightnotice}
+%   \def\@evenfoot{}
+% }
+
+\ifCLASSINFOpdf
+   \usepackage[pdftex]{graphicx}
+\else
+   \usepackage[dvips]{graphicx}
+\fi
+
+\ifCLASSOPTIONcompsoc
+  \usepackage[caption=false, font=normalsize, labelfont=sf, textfont=sf]{subfig}
+\else
+  \usepackage[caption=false, font=footnotesize]{subfig}
+\fi
+
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{siunitx}
+\usepackage{fancyref}
+
+\usepackage{geometry}
+\geometry{letterpaper, top=0.7in, bottom=0.7in, left=0.65in, right=0.65in}
+
+\input{glossary}
+
+\usepackage[style=ieee, doi=false, isbn=false, url=false, maxbibnames=1, minbibnames=1, maxcitenames=1, mincitenames=1, backend=biber, defernumbers=false]{biblatex}
+\addbibresource{./bibtex/bib/Biblio.bib}
+
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{day}}
+\AtEveryBibitem{\clearfield{volume}}
+\AtEveryBibitem{\clearfield{issue}}
+\AtEveryBibitem{\clearfield{pages}}
+\AtEveryBibitem{\clearfield{number}}
+\AtEveryBibitem{\clearfield{title}}
+\AtEveryBibitem{\clearfield{isbn}}
+\AtEveryBibitem{\clearfield{keywords}}
+\AtEveryBibitem{\clearfield{issn}}
+\AtEveryBibitem{\clearfield{journal}}
+
+\begin{document}
+
+\title{
+    \vspace{-0.5cm}
+
+    PET/CT Motion Correction Exploiting Motion Models Fit on Coarsely Gated Data Applied to Finely Gated Data
+}
+
+\pagestyle{plain}
+\pagenumbering{gobble}
+
+\author{
+    \vspace{-0.3cm}
+    
+    \IEEEauthorblockN{
+        Alexander~C.~Whitehead~\IEEEauthorrefmark{1}~\IEEEauthorrefmark{2},
+        Kuan-Hao~Su~\IEEEauthorrefmark{3},
+        Scott~D.~Wollenweber~\IEEEauthorrefmark{3},
+        Jamie~R.~McClelland~\IEEEauthorrefmark{2} and
+        Kris~Thielemans~\IEEEauthorrefmark{1}~\IEEEauthorrefmark{2}
+    }
+            
+    \IEEEauthorblockA{
+        \IEEEauthorrefmark{1}
+        \textit{Institute of Nuclear Medicine, University College London, UK}
+    }
+    \IEEEauthorblockA{
+        \IEEEauthorrefmark{2}
+        \textit{Centre for Medical Image Computing, University College London, UK}
+    }
+    \IEEEauthorblockA{
+        \IEEEauthorrefmark{3}
+        \textit{Molecular Imaging and Computed Tomography Engineering, GE Healthcare, USA}
+        \vspace{-0.5cm}
+    }
+
+    \thanks{This research was supported by GE Healthcare, the NIHR UCLH Biomedical Research Centre and the UCL EPSRC Centre for Doctoral Training in Intelligent, Integrated Imaging in Healthcare (i4health) grant (EP/L016478/1).}
+    \thanks{The software used was partly produced by the Computational Collaborative Project on Synergistic Biomedical Imaging, CCP SyneRBI, UK EPSRC grant (EP/T026693/1).}
+    \thanks{Jamie~R.~McClelland is supported by a Cancer Research UK Centres Network Accelerator Award grant (A21993) to the ART-NET consortium and a CRUK Multi-disciplinary grant (CRC 521).}
+    \thanks{(contact: \texttt{alexander.whitehead.18@ucl.ac.uk}).}
+}
+
+\maketitle
+\IEEEpeerreviewmaketitle
+
+\begin{abstract}
+    Motion correction is imperative to the reduction of blurring and artefacts inherent in positron emission tomography; due to the relatively long acquisition time and the temporal difference in the attenuation map acquisition. Registration literature contains many examples of spatial regularisers, however there are few temporal regularisers. Motion models can act as such a temporal regulariser as well as allowing for the interpolation of unseen motion correction results. Previous work focused on applying a motion modelling approach to high time-of-flight resolution non-attenuation corrected data; where the data was corrected to the space of the attenuation map. This work seeks to extend previous work by incorporating an initial maximum likelihood attenuation correction factors reconstruction as well as fitting the motion model on high spatial low temporal resolution data and applying it to low spatial high temporal resolution data. To test this, $4$-Dimensional Extended Cardiac Torso images are constructed, simulated, phase gated and reconstructed using maximum likelihood attenuation correction factors reconstruction. Then group-wise motion corrected; where a motion model is fit and the data registered to the attenuation map between iterations. Before the motion model is taken and used to aid in attenuation and motion correction of displacement gated ordered subset expectation maximisation data. Evaluation compares the results of these methods against non-motion corrected, motion free and re-motion corrected examples including non-attenuation corrected initialised data. Results indicate that the incorporation of maximum likelihood attenuation correction factors reconstruction and fitting of the motion model on high spatial low temporal resolution data improves contrast and quantification while allowing for a relatively fast execution time.
+\end{abstract}
+
+\vspace{-0.5cm}
+
+\input{body}
+
+\AtNextBibliography{\small}
+\printbibliography
+
+\end{document}
