@@ -2,7 +2,7 @@
 \IEEEoverridecommandlockouts
 
 \usepackage[activate={true, nocompatibility}, final, tracking=true, kerning=true, spacing=true, factor=1100, stretch=10, shrink=10]{microtype}
-\linespread{0.9}
+\linespread{0.85}
 
 % \makeatletter
 % \def\mycopyrightnotice{
@@ -63,7 +63,7 @@
 \begin{document}
 
 \title{
-    \vspace{-0.5cm}
+    \vspace{-0.75cm}
 
     PET/CT Motion Correction Exploiting Motion Models Fit on Coarsely Gated Data Applied to Finely Gated Data
 }
@@ -72,7 +72,7 @@
 \pagenumbering{gobble}
 
 \author{
-    \vspace{-0.3cm}
+    \vspace{-0.5cm}
     
     \IEEEauthorblockN{
         Alexander~C.~Whitehead~\IEEEauthorrefmark{1}~\IEEEauthorrefmark{2},
@@ -93,7 +93,7 @@
     \IEEEauthorblockA{
         \IEEEauthorrefmark{3}
         \textit{Molecular Imaging and Computed Tomography Engineering, GE Healthcare, USA}
-        \vspace{-0.5cm}
+        \vspace{-0.75cm}
     }
 
     \thanks{This research was supported by GE Healthcare, the NIHR UCLH Biomedical Research Centre and the UCL EPSRC Centre for Doctoral Training in Intelligent, Integrated Imaging in Healthcare (i4health) grant (EP/L016478/1).}
@@ -106,7 +106,8 @@
 \IEEEpeerreviewmaketitle
 
 \begin{abstract}
-    Motion correction is imperative to the reduction of blurring and artefacts inherent in PET; due to the relatively long acquisition time and the temporal difference in the attenuation map acquisition. Registration literature contains many examples of spatial regularisers, however there are few temporal regularisers. Motion models can act as such a temporal regulariser as well as allowing for the interpolation of unseen motion correction results. In our previous work we applied applied a motion modelling approach to high TOF resolution non-attenuation corrected data; where the data was corrected to the space of the attenuation map. However, this approach was challenging, especially when low contrast lung tumours are present. This work seeks to extend previous work by incorporating an approach suggested by Y. Lu et al. (JNM 2019) perform an initial MLACF reconstruction for the motion estimation. In this work, we combine these 2 approaches, with several improvements including estimating $\mu$-map alignment as well as fitting the motion model on high spatial low temporal/gate resolution data and applying it to low spatial high temporal/gate resolution data. To test this, $4$-Dimensional Extended Cardiac Torso images are constructed, simulated, pseudo-phase gated and reconstructed using MLACF reconstruction. Before the motion model is taken and used to aid in attenuation and motion correction of displacement gated ordered subset expectation maximisation data. Evaluation compares the results of these methods against non-interpolated motion model, non-motion corrected and motion free examples. Results indicate that the incorporation of maximum likelihood activity and attenuation correction factors estimation and fitting of the motion model on high spatial low temporal resolution data improves contrast and quantification while allowing for a relatively fast execution time.
+    Motion correction is imperative to the reduction of blurring and artefacts inherent in PET; due to the relatively long acquisition time, and the temporal difference in the attenuation map acquisition. Registration literature contains many examples of spatial regularisers, however there are few temporal regularisers. Motion models can act as such a temporal regulariser, as well as allowing for the interpolation of unseen motion correction results. In our previous work, we applied a motion modelling approach to high TOF resolution non-attenuation corrected data; where the data was corrected to the space of the attenuation map. However, this approach was challenging, especially when low contrast lung tumours are present. This work seeks to extend previous work, by incorporating an approach suggested by Y. Lu et al. (JNM 2019), to perform an initial MLACF reconstruction for the motion estimation. In this work, we combine these two approaches, with several improvements, including; $\mu$-map alignment, as well as, fitting the motion model on low noise low temporal/gate resolution data, and applying it to high noise high temporal/gate resolution data. To test this, %$4$-Dimensional Extended Cardiac Torso
+    XCAT volumes are constructed, and TOF data simulated. Evaluation compares the results of the proposed method against, where the motion model was fit on data gated more finely, where the motion model was fit on noiseless data, and finally non-motion corrected examples. Results indicate that the incorporation of MLACF, and fitting of the motion model on low noise low temporal/gate resolution data, improves contrast and quantification, while allowing for a relatively fast execution time.
 \end{abstract}
 
 \vspace{-0.5cm}
@@ -115,8 +116,7 @@
 
 \vspace{-0.5cm}
 
-\AtNextBibliography
-{
+\AtNextBibliography{
     \scriptsize
     % \small
 }
