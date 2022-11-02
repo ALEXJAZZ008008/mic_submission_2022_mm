@@ -2,21 +2,21 @@
 \IEEEoverridecommandlockouts
 
 \usepackage[activate={true, nocompatibility}, final, tracking=true, kerning=true, spacing=true, factor=1100, stretch=10, shrink=10]{microtype}
-\linespread{0.85}
+% \linespread{0.85}
 
-% \makeatletter
-% \def\mycopyrightnotice{
-%   {\footnotesize
-%   \begin{minipage}{\textwidth}
-%   \centering
-%   978-1-6654-2113-3/21/\$31.00 \copyright2021 IEEE
-%   \end{minipage}
-%   }
-% }
-% \def\ps@IEEEtitlepagestyle{
-%   \def\@oddfoot{\mycopyrightnotice}
-%   \def\@evenfoot{}
-% }
+\makeatletter
+\def\mycopyrightnotice{
+  {\footnotesize
+  \begin{minipage}{\textwidth}
+  \centering
+  978-1-6654-2113-3/21/\$31.00 \copyright2021 IEEE
+  \end{minipage}
+  }
+}
+\def\ps@IEEEtitlepagestyle{
+  \def\@oddfoot{\mycopyrightnotice}
+  \def\@evenfoot{}
+}
 
 \ifCLASSINFOpdf
    \usepackage[pdftex]{graphicx}
@@ -63,7 +63,7 @@
 \begin{document}
 
 \title{
-    \vspace{-0.75cm}
+    % \vspace{-0.75cm}
 
     PET/CT Motion Correction Exploiting Motion Models Fit on Coarsely Gated Data Applied to Finely Gated Data
 }
@@ -72,7 +72,7 @@
 \pagenumbering{gobble}
 
 \author{
-    \vspace{-0.5cm}
+    % \vspace{-0.5cm}
     
     \IEEEauthorblockN{
         Alexander~C.~Whitehead~\IEEEauthorrefmark{1}~\IEEEauthorrefmark{2},
@@ -93,7 +93,7 @@
     \IEEEauthorblockA{
         \IEEEauthorrefmark{3}
         \textit{Molecular Imaging and Computed Tomography Engineering, GE Healthcare, USA}
-        \vspace{-0.75cm}
+        % \vspace{-0.75cm}
     }
 
     % \thanks{Manuscript received November 29, 2021.}
@@ -111,15 +111,15 @@
     XCAT volumes are constructed, and TOF data simulated. Evaluation compares the results of the proposed method against, where the motion model was fit on data gated more finely, where the motion model was fit on noiseless data, and finally non-motion corrected examples. Results indicate that the incorporation of MLACF, and fitting of the motion model on low noise low temporal/gate resolution data, improves contrast and quantification, while allowing for a relatively fast execution time.
 \end{abstract}
 
-\vspace{-0.5cm}
+% \vspace{-0.5cm}
 
 \input{body}
 
-\vspace{-0.5cm}
+% \vspace{-0.5cm}
 
 \AtNextBibliography{
-    \scriptsize
-    % \small
+    % \scriptsize
+    \small
 }
 \printbibliography
 
